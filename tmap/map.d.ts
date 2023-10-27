@@ -185,6 +185,12 @@ declare namespace TMap {
   }
   type MapEventListener = (e: MapEvent) => void;
 
+  interface HighlightOptions {
+    paths?: LatLng[];
+    highlightColor?: string;
+    shadeColor?: string;
+  }
+
   class Map {
     constructor(container: string | HTMLElement, opts?: MapOptions);
     setCenter(center: LatLng): this;
@@ -195,6 +201,10 @@ declare namespace TMap {
     setOffset(offset: Offset): this;
     setDraggable(draggable: boolean): this;
     setScrollable(scrollable: boolean): this;
+    setMaxZoom(maxZoom: Number): this;
+    setMinZoom(minZoom:Number): this;
+    setPitchable(pitchable:Boolean): this;
+    setRotatable(rotatable:Boolean): this;
     setDoubleClickZoom(doubleClickZoom: boolean): this;
     setBoundary(boundary: LatLngBounds): this;
     setViewMode(viewMode: ViewMode): this;
@@ -246,6 +256,12 @@ declare namespace TMap {
      * @param offset 像素坐标
      */
     unprojectFromContainer(pixel: Point): LatLng;
+    /**
+     * 启用地图区域高亮功能
+     */
+    enableAreaHighlight(opts: HighlightOptions);
+    freeze(): this;
+    unfreeze(): this;
     on(eventName: string, listener: Function): this;
     on(eventName: MapEventName, listener: MapEventListener): this;
     on(eventName: MapOtherEventName, listener: () => void): this;
