@@ -2,6 +2,9 @@
 
 - zh_CN [简体中文](README.zh_CN.md)
 
+### Note
+A new package named tmap_types_temporary has been published to solve some of the existing bugs and add new methods. It's forked from the original repo didi/tmap-types, and all the changes are also submitted to it. Once the pull request is merged, this temporary package will be deprecated.
+
 ### Introduction
 
 Tencent Maps SDK TypeScript type declaration for react-tmap / vue-tmap map components
