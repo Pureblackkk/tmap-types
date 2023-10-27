@@ -259,7 +259,7 @@ declare namespace TMap {
     /**
      * 启用地图区域高亮功能
      */
-    enableAreaHighlight(opts: HighlightOptions);
+    enableAreaHighlight(opts: HighlightOptions): this;
     freeze(): this;
     unfreeze(): this;
     on(eventName: string, listener: Function): this;
